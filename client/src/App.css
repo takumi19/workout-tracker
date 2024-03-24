@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Adjusted: position the pseudo-element */
+  overflow: hidden;
+}
+
+.App::before {
+  content: '';
+  /* Necessary for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../public/gigachad.jpeg');
+  /* Same as .App background */
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  /* Apply blur effect */
+  filter: blur(8px);
+  /* For Safari */
+  z-index: -1;
+  /* Ensure it's behind the content */
+}

@@ -1,0 +1,40 @@
+.workout-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workout-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: grey;
+}
+
+.workout-table th,
+.workout-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.workout-table th {
+    background-color: #f35165;
+    color: white;
+}
+
+.workout-table input {
+    border: none;
+    width: 100%;
+}
+
+.workout-table-actions {
+    margin-top: 20px;
+}
+/* 
+.workout-table-actions button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+} */

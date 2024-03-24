@@ -1,0 +1,17 @@
+.pretty-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #f35165;
+    border: none;
+    border-radius: 20px;
+    /* Rounded edges */
+    cursor: pointer;
+    outline: none;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.pretty-button:hover {
+    background-color: #b9263d;
+}
