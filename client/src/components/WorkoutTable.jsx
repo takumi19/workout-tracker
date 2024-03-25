@@ -1,11 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import './Button.css';
 import './WorkoutTable.css';
 
 const WorkoutTable = ({ onBack, workouts }) => {
-    const tableRef = useRef(); // Add this line
+    const tableRef = useRef(); 
 
-    // Modified handleSave to collect data and send it to the backend
     const handleSave = async () => {
         const tableRows = tableRef.current.querySelectorAll("tbody tr");
         const workoutData = Array.from(tableRows).map(row => {
@@ -24,24 +23,22 @@ const WorkoutTable = ({ onBack, workouts }) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(workoutData), // Send the collected data as JSON
+                body: JSON.stringify(workoutData), 
             });
 
             if (response.ok) {
                 alert('Workout saved successfully');
-                onBack(); // Optionally, go back to the main view
+                onBack(); 
             } else {
-                alert('Failed to save workout');
+                alert('FAiled to save workout');
             }
         } catch (error) {
             console.error("Failed to save workout", error);
-            alert('Failed to save workout');
+            alert('Failed to save workouT');
         }
     };
 
-    // Function to render table rows
     const renderRows = () => {
-        // If workouts data is loaded, display it
         if (workouts && workouts.length > 0) {
             return workouts.map((workout, index) => (
                 <tr key={index}>
@@ -53,7 +50,6 @@ const WorkoutTable = ({ onBack, workouts }) => {
                 </tr>
             ));
         }
-        // Otherwise, provide empty inputs for a new workout
         return Array.from({ length: 10 }).map((_, index) => (
             <tr key={index}>
                 <td><input type="text" /></td>
@@ -67,7 +63,7 @@ const WorkoutTable = ({ onBack, workouts }) => {
 
     return (
         <div className="workout-table-container">
-            <h2>Workout</h2>
+            {/* <h2>Workout</h2> */}
             <table className="workout-table" ref={tableRef}>
                 <thead>
                     <tr>

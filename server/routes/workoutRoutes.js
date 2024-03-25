@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Workout = require('../models/WorkoutModel'); // Assuming you've created this model
+const Workout = require('../models/WorkoutModel'); 
 
-// POST route to save a workout
+
 router.post('/', async (req, res) => {
     try {
         const newWorkout = new Workout(req.body);
@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        const workouts = await Workout.find({}); // Fetch all workouts
+        const workouts = await Workout.find({}); 
         res.json(workouts);
     } catch (error) {
         res.status(500).send(error);

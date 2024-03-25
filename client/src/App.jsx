@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState  } from 'react';
 import './App.css';
 import Button from './components/Button';
 import WorkoutTable from './components/WorkoutTable';
 
 function App() {
   const [showTable, setShowTable] = useState(false);
-  const [workouts, setWorkouts] = useState([]); // State to hold loaded workout data
+  const [workouts, setWorkouts] = useState([]); 
 
   const handleNewClick = () => {
-    setWorkouts([]); // Ensure workouts is empty for new entries
-    setShowTable(true); // Show the table for new workout entry
+    setWorkouts([]); 
+    setShowTable(true); 
   };
 
   const handleLoadClick = async () => {
     try {
-      const response = await fetch('/api/workouts'); // Adjust the URL as necessary
+      const response = await fetch('/api/workouts'); 
       const data = await response.json();
-      setWorkouts(data); // Load data into state
-      setShowTable(true); // Show the table with loaded data
+      setWorkouts(data); 
+      setShowTable(true); 
     } catch (error) {
       console.error("Failed to fetch workouts", error);
     }
@@ -31,7 +31,7 @@ function App() {
           <Button text="Load" onClick={handleLoadClick} />
         </>
       ) : (
-        // Pass the workouts state as a prop to the WorkoutTable
+        
         <WorkoutTable workouts={workouts} onBack={() => setShowTable(false)} />
       )}
     </div>

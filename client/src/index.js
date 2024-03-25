@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Global styles
-import App from './App'; // Adjust the path according to your project structure
+import './index.css'; 
+import App from './App'; 
 
 ReactDOM.render(
   <React.StrictMode>

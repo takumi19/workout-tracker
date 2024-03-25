@@ -12,6 +12,10 @@
     background-color: grey;
 }
 
+/* .workout-table h2 {
+    color:gainsboro;
+} */
+
 .workout-table th,
 .workout-table td {
     border: 1px solid #ddd;
@@ -31,6 +35,7 @@
 .workout-table-actions {
     margin-top: 20px;
 }
+
 /* 
 .workout-table-actions button {
     margin: 0 10px;
