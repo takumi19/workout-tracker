@@ -18,12 +18,15 @@ const WorkoutTable = ({ onBack, workouts }) => {
         });
 
         try {
-            const response = await fetch('https://localhost:3001/api/workouts/', {
+
+            console.log(JSON.stringify({  workoutData }))
+            const response = await fetch('http://localhost:3001/api/workouts/instance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(workoutData), 
+                body: JSON.stringify( workoutData), 
+                mode: 'cors'
             });
 
             if (response.ok) {

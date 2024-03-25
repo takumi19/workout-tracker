@@ -14,9 +14,11 @@ function App() {
 
   const handleLoadClick = async () => {
     try {
-      const response = await fetch('/api/workouts'); 
-      const data = await response.json();
-      setWorkouts(data); 
+      const response = await fetch('http://localhost:3001/api/workouts/'); 
+      // console.log( await response.json())
+      const data = await response.json()
+      console.log(data)
+      setWorkouts(data[data.length - 1].exercises); 
       setShowTable(true); 
     } catch (error) {
       console.error("Failed to fetch workouts", error);
