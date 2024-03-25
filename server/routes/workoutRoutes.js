@@ -17,7 +17,7 @@ router.post('/instance', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        console.log('getk')
+        // console.log('getk')
         const workouts = await Workout.find({}); 
         console.log(workouts)
         res.json(workouts);
